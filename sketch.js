@@ -1,56 +1,62 @@
 let array = [];
-let backgroundColor = 200;
+let backgroundColor = (200, 0, 0, 20);
+let noiseOffset = 0.0;
+let strokeWidth = 5; 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(backgroundColor);
-
-  strokeWeight(5);
+ 
+ drawGrid();
   noFill();
 }
 
 function draw() {
 
-if (mouseIsPressed){
-	backgroundColor-=4;//decrease backgound by 4's, so faster,
-	background(backgroundColor);
-	// line(mouseX, mouseY, pmouseX, pmouseY);
-	array.push([mouseX, mouseY]);
+background(220, 0, 0, 5)
+strokeWeight(strokeWidth);
 
-		beginShape();
-		for(let i = 0; i < array.length - 1; i++){
-			//line(array[i][0], array[i][1], array[i + 1][0], array[i + 1][1]);
-		curveVertex(array[i][0], array[i][1]); 
-		} 
+noiseOffset = noiseOffset + .05 ;
+strokeWidth = noise(noiseOffset) * 100;
 
-	endShape();
-	}
+stroke(map(mouseX, 0, 600, 0, 255, true))
+line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+line(mouseX, mouseY, pmouseX, pmouseY);
+
 }
+
 
 function keyTyped(){
 
 	if(key === 's'){
 		//saves images
 		saveCanvas('fileName', 'png');
-	} else if (key === 'd'){
-		//display image
-		background(255);
-
-	beginShape();
-		for(let i = 0; i < array.length - 1; i++){
-			//line(array[i][0], array[i][1], array[i + 1][0], array[i + 1][1]);
-		curveVertex(array[i][0], array[i][1]); 
-		} 
-
-	endShape();
+	} else if (key === 'c'){
+	clear();
+		
 	}
 
 
 	return false;
 }
 
-function mousePressed(){
-	array = [];
-	backgroundColor = 255;
 
+
+function drawGrid(){
+	numCells = 20;
+	fillColor = 255
+	//noStroke();
+	strokeWeight(0);
+
+	for (let i = 0; i <= width; i += width / numCells){
+		for (let j = 0; j <= height; j += height / numCells){
+		if (fillColor === 255){
+			fillColor = 200;
+		} else {
+			fillColor 255;
+		}
+		fill(fillColor);
+		rect(i, j, width /numCells, height / numCells); // makes the grid
+		}
+	}
+	strokeWeight(5);
 }
