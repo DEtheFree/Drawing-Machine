@@ -52,7 +52,7 @@ function drawGrid(){
 		if (fillColor === 255){
 			fillColor = 200;
 		} else {
-			fillColor 255;
+			fillColor = 255;
 		}
 		fill(fillColor);
 		rect(i, j, width /numCells, height / numCells); // makes the grid
