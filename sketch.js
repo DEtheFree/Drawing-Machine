@@ -5,25 +5,25 @@ let color
 function setup() {
   createCanvas(windowWidth, windowHeight);
  
- drawGrid();
-  noFill();
+	drawGrid();
+	noFill();
 
-colorPicker = createColorPicker('#ed225d');
-colorPicker.position(windowWidth / 2, height + 30);
+	colorPicker = createColorPicker('#000000');
+	colorPicker.position(windowWidth / 2, height + 30);
 
 }
 
 function draw() {
 
-background(220, 0, 0, 5)
-strokeWeight(strokeWidth);
-stroke(colorPicker.color());
+	background(255, 255, 255, 5)
+	strokeWeight(strokeWidth);
+	stroke(colorPicker.color());
 
-//stroke(map(mouseX, 0, 600, 0, 255, true)) makes trail
-line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
-line(mouseX, mouseY, pmouseX, pmouseY);
-line(mouseY, mouseX, pmouseY, pmouseX)
-line(width + mouseX, height + mouseY, width + pmouseX, height + pmouseY);
+	//stroke(map(mouseX, 0, 600, 0, 255, true)) makes trail
+	line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+	line(mouseX, mouseY, pmouseX, pmouseY);
+	line(mouseY, mouseX, pmouseY, pmouseX)
+	line(width + mouseX, height + mouseY, width + pmouseX, height + pmouseY);
 }
 
 
