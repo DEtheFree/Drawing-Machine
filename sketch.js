@@ -1,5 +1,5 @@
 let array = [];
-let backgroundColor = (200, 0, 0,);
+let backgroundColor = (200, 0, 0);
 let strokeWidth = 5; 
 let color 
 
