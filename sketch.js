@@ -1,24 +1,26 @@
 let array = [];
-let backgroundColor = (200, 0, 0, 20);
-let noiseOffset = 0.0;
+let backgroundColor = (200, 0, 0,);
 let strokeWidth = 5; 
+let color 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
  
  drawGrid();
   noFill();
+
+  color = createColorpicker('ed6438');
+  color.position(0, height + 30);
+
 }
 
 function draw() {
 
 background(220, 0, 0, 5)
 strokeWeight(strokeWidth);
+stroke(color.color());
 
-noiseOffset = noiseOffset + .05 ;
-strokeWidth = noise(noiseOffset) * 100;
-
-stroke(map(mouseX, 0, 600, 0, 255, true))
+//stroke(map(mouseX, 0, 600, 0, 255, true)) makes trail
 line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
 line(mouseX, mouseY, pmouseX, pmouseY);
 line(mouseY, mouseX, pmouseY, pmouseX)
