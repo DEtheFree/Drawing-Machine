@@ -9,8 +9,8 @@ function setup() {
  drawGrid();
   noFill();
 
-  color = createColorpicker('ed6438');
-  color.position(0, height + 30);
+colorPicker = createColorPicker('#ed225d');
+colorPicker.position(0, height + 30);
 
 }
 
@@ -18,7 +18,7 @@ function draw() {
 
 background(220, 0, 0, 5)
 strokeWeight(strokeWidth);
-stroke(color.color());
+stroke(colorPicker.color());
 
 //stroke(map(mouseX, 0, 600, 0, 255, true)) makes trail
 line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
