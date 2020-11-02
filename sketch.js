@@ -1,5 +1,4 @@
 let array = [];
-let backgroundColor = (200, 0, 0);
 let strokeWidth = 5; 
 let color 
 
@@ -10,7 +9,7 @@ function setup() {
   noFill();
 
 colorPicker = createColorPicker('#ed225d');
-colorPicker.position(0, height + 30);
+colorPicker.position(windowWidth / 2, height + 30);
 
 }
 
@@ -24,6 +23,7 @@ stroke(colorPicker.color());
 line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
 line(mouseX, mouseY, pmouseX, pmouseY);
 line(mouseY, mouseX, pmouseY, pmouseX)
+line(width + mouseX, height + mouseY, width + pmouseX, height + pmouseY);
 }
 
 
