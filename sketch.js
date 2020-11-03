@@ -9,7 +9,7 @@ function setup() {
 	noFill();
 
 	colorPicker = createColorPicker('#000000');
-	colorPicker.position(windowWidth / 2, height + 30);
+	colorPicker.position(windowWidth / 2, height / 2);
 
 }
 
@@ -22,8 +22,9 @@ function draw() {
 	//stroke(map(mouseX, 0, 600, 0, 255, true)) makes trail
 	line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
 	line(mouseX, mouseY, pmouseX, pmouseY);
-	line(mouseY, mouseX, pmouseY, pmouseX)
-	line(width + mouseX, height + mouseY, width + pmouseX, height + pmouseY);
+	line(mouseY, mouseX, pmouseY, pmouseX);
+	line(mouseX, mouseY, pmouseY, pmouseX);
+	line(mouseY, mouseX, pmouseX, pmouseY);
 }
 
 
