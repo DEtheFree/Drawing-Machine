@@ -25,6 +25,9 @@ function draw() {
 	line(mouseY, mouseX, pmouseY, pmouseX);
 	line(mouseX, mouseY, pmouseY, pmouseX);
 	line(mouseY, mouseX, pmouseX, pmouseY);
+	line(width - mouseY, height - mouseX, width - pmouseY, height - pmouseX);
+	line(width - mouseX, height - mouseY, width + pmouseY, height + pmouseX);
+	line(width + mouseY, height + mouseX, width - pmouseX, height - pmouseY);
 }
 
 
